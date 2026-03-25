@@ -23,15 +23,17 @@ int main(void)
 
     while(1)
     {
-      //if P1IN is low then turn on the light else LED is off
-      if ( !(P1IN & 0x08) ){
-        //turn LED on
-        P1OUT |= 0x40;
-        
-      } else {
-        //LED is off
-        P1OUT &= ~(0x40); 
-      }
+        //Add 100ms delay
+        __delay_cycles(100000);
+
+        //if P1IN is low then turn on the light else LED is off
+        if ( !(P1IN & 0x08) ){
+            //turn LED on
+            P1OUT |= 0x40;
+        } else {
+            //LED is off
+            P1OUT &= ~(0x40); 
+        }
     }
 
 }
